@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition" template="/view/pages/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/view/pages/header.jsp" />
+		<put-attribute name="menu" value="/view/pages/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/view/pages/footer.jsp" />
+	</definition>
+
+	<definition name="body" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/body.jsp" />
+	</definition>
+	<!-- AJIT START -->
+	<definition name="test" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/test.jsp" />
+	</definition>
+	<definition name="enterpriseSetup" extends="base.definition">
+		<put-attribute name="title" value="Enterprise Setup" />
+		<put-attribute name="body" value="/view/pages/enterpriseSetup.jsp" />
+	</definition>
+	<definition name="legalEntityMasterSetup" extends="base.definition">
+		<put-attribute name="body"
+			value="/view/pages/legalEntityMasterSetup.jsp" />
+	</definition>
+	<definition name="leMasterUpdateConfirm" extends="base.definition">
+		<put-attribute name="body"
+			value="/view/pages/leMasterUpdateConfirm.jsp" />
+	</definition>
+	<definition name="enterpriseMaster" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/enterpriseMaster.jsp" />
+	</definition>
+	<definition name="legalEntityMaster" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/legalEntityMaster.jsp" />
+	</definition>
+	<definition name="spaceTypeMaster" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/spaceTypeMaster.jsp" />
+	</definition>
+	<!-- AJIT END -->
+	<!-- VIPIN START -->
+	<definition name="country" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/country.jsp" />
+	</definition>
+	<definition name="shift" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/shift.jsp" />
+	</definition>
+	<definition name="unit" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/unit.jsp" />
+	</definition>
+	<definition name="tagPrefix" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/tagPrefix.jsp" />
+	</definition>
+	<!-- VIPIN END -->
+	<!-- RANJAN START -->
+	<definition name="organizationSetup" extends="base.definition">
+		<put-attribute name="title" value="Organization Hierarchy" />
+		<put-attribute name="body" value="/view/pages/organizationSetup.jsp" />
+	</definition>
+	<definition name="organizationSetupTable" extends="base.definition">
+		<put-attribute name="body"
+			value="/view/pages/organizationSetupTable.jsp" />
+	</definition>
+	<definition name="OrganizationMaster" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/OrganizationMaster.jsp" />
+	</definition>
+	<definition name="OrganizationAccordingMaster" extends="base.definition">
+		<put-attribute name="body"
+			value="/view/pages/OrganizationAccordingMaster.jsp" />
+	</definition>
+	<!-- RANJAN END -->
+
+	<!-- SATYA START -->
+	<definition name="ecoZoneSetup" extends="base.definition">
+		<put-attribute name="body" value="/view/pages/ecoZoneSetup.jsp" />
+	</definition>
+	<!-- SATYA END -->
+
+</tiles-definitions>

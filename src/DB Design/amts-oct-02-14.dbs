@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="amts" id="Project3151801" template="Default" database="SqlServer2000_2005" >
+	<schema name="amts" schemaname="amts" defo="y" >
+		<table name="bondType" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="le_id" type="int" jt="4" />
+			<column name="ecoZoneId" type="int" jt="4" />
+			<index name="Pk_bondType" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_bondType" unique="NORMAL" >
+				<column name="ecoZoneId" />
+			</index>
+			<index name="idx_bondType" unique="NORMAL" >
+				<column name="le_id" />
+			</index>
+			<fk name="fk_bondtype_eco_zone_setup" to_schema="amts" to_table="eco_zone_setup" >
+				<fk_column name="ecoZoneId" pk="id" />
+			</fk>
+			<fk name="fk_bondtype" to_schema="amts" to_table="legal_entity_master" >
+				<fk_column name="le_id" pk="id" />
+			</fk>
+		</table>
+		<table name="country" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="country_name" type="varchar" length="20" jt="12" />
+			<index name="Pk_country" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="eco_zone_setup" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="eco_zone_code" type="varchar" length="20" jt="12" />
+			<column name="eco_zone_name" type="varchar" length="20" jt="12" />
+			<index name="Pk_eco_zone_setup" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="enterprise_master" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="enterprise_name" type="varchar" length="20" jt="12" />
+			<column name="addressLineFirst" type="varchar" length="20" jt="12" />
+			<column name="addressLineSecond" type="varchar" length="20" jt="12" />
+			<column name="addressLineThird" type="varchar" length="20" jt="12" />
+			<column name="addressLineFour" type="varchar" length="20" jt="12" />
+			<column name="cityName" type="int" length="100" jt="4" mandatory="y" />
+			<column name="stateName" type="varchar" length="20" jt="12" />
+			<column name="pinZipCode" type="varchar" length="20" jt="12" />
+			<column name="portNo" type="varchar" length="20" jt="12" />
+			<column name="mailServer" type="varchar" length="50" jt="12" />
+			<column name="serviceAccPassword" type="varchar" length="50" jt="12" />
+			<column name="serviceAccount" type="varchar" length="50" jt="12" />
+			<column name="createdBy" type="varchar" length="20" jt="12" />
+			<column name="createdOn" type="datetime" jt="93" />
+			<column name="updatedOn" type="datetime" jt="93" />
+			<column name="statu" type="int" jt="4" />
+			<column name="countryId" type="int" jt="4" mandatory="y" />
+			<index name="Pk_enterprise_master" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_enterprise_master" unique="NORMAL" >
+				<column name="countryId" />
+			</index>
+			<fk name="fk_enterprise_master_country" to_schema="amts" to_table="country" >
+				<fk_column name="countryId" pk="id" />
+			</fk>
+		</table>
+		<table name="enterprise_setup" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="mult_ le" type="varchar" length="10" jt="12" />
+			<column name="no_of_ le" type="int" jt="4" />
+			<column name="mail_ server_across_enterprise" type="varchar" length="10" jt="12" />
+			<column name="service_acc_for_ mail_req" type="varchar" length="10" jt="12" />
+			<column name="tracking" type="varchar" length="10" jt="12" />
+			<column name="depreciation" type="varchar" length="10" jt="12" />
+			<index name="Pk_enterprise_setup" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="legal_entity_master" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="legal_entity_name" type="varchar" length="20" jt="12" />
+			<column name="legal_entity_code" type="varchar" length="20" jt="12" />
+			<column name="address1" type="varchar" length="20" jt="12" />
+			<column name="address2" type="varchar" length="20" jt="12" />
+			<column name="address3" type="varchar" length="20" jt="12" />
+			<column name="address4" type="varchar" length="20" jt="12" />
+			<column name="city" type="varchar" length="20" jt="12" />
+			<column name="state" type="varchar" length="20" jt="12" />
+			<column name="country_id" type="int" jt="4" />
+			<column name="phone_no" type="bigint" jt="-5" />
+			<column name="fax_no" type="varchar" length="20" jt="12" />
+			<column name="zip_code" type="varchar" length="20" jt="12" />
+			<column name="url" type="varchar" length="100" jt="12" />
+			<column name="email_id" type="varchar" length="100" jt="12" />
+			<column name="ip_address" type="varchar" length="100" jt="12" />
+			<column name="portNo" type="varchar" length="20" jt="12" />
+			<column name="servc_acc" type="varchar" length="20" jt="12" />
+			<column name="password" type="varchar" length="20" jt="12" />
+			<column name="logo" type="image" jt="-4" />
+			<column name="createdOn" type="datetime" jt="93" />
+			<column name="updatedOn" type="datetime" jt="93" />
+			<column name="createdBy" type="varchar" length="20" jt="12" />
+			<column name="statu" type="int" length="2" jt="4" />
+			<index name="Pk_legal_entity_master" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_legal_entity_master" unique="NORMAL" >
+				<column name="country_id" />
+			</index>
+			<fk name="fk_legal_entity_master_country" to_schema="amts" to_table="country" >
+				<fk_column name="country_id" pk="id" />
+			</fk>
+		</table>
+		<table name="mapp_eco_zone_setup" >
+			<column name="id" type="int" jt="4" />
+			<column name="apply_eco_zone " type="varchar" length="20" jt="12" />
+			<column name="le_id" type="int" jt="4" />
+			<index name="idx_mapp_eco_zone_setup" unique="NORMAL" >
+				<column name="le_id" />
+			</index>
+			<fk name="fk_mapp_eco_zone_setup" to_schema="amts" to_table="legal_entity_master" >
+				<fk_column name="le_id" pk="id" />
+			</fk>
+		</table>
+		<table name="org_hier_setup_info" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="Organization_Name" type="varchar" length="20" jt="12" />
+			<column name="Ownership_tracking" type="varchar" length="20" jt="12" />
+			<column name="usage_tracking" type="varchar" length="20" jt="12" />
+			<column name="employee_mapping" type="varchar" length="20" jt="12" />
+			<column name="support_function" type="varchar" length="20" jt="12" />
+			<column name="head_of_level" type="varchar" length="20" jt="12" />
+			<column name="head_of_level_one" type="varchar" length="20" jt="12" />
+			<column name="head_of_level_many" type="varchar" length="20" jt="12" />
+			<column name="spoc_applicable" type="varchar" length="20" jt="12" />
+			<column name="spoc_many" type="varchar" length="20" jt="12" />
+			<column name="spoc_one" type="varchar" length="20" jt="12" />
+			<column name="asset_manager_applicable" type="varchar" length="20" jt="12" />
+			<column name="asset_manager_one" type="varchar" length="20" jt="12" />
+			<column name="asset_manager_many" type="varchar" length="20" jt="12" />
+			<column name="valid_period_appl" type="varchar" length="20" jt="12" />
+			<column name="deprec_report" type="varchar" length="20" jt="12" />
+			<column name="ownership_track_not_appl" type="varchar" length="20" jt="12" />
+			<column name="sf_track_not_appl" type="varchar" length="20" jt="12" />
+			<column name="createdBy" type="varchar" length="20" jt="12" />
+			<column name="createdOn" type="datetime" jt="93" />
+			<column name="updatedOn" type="datetime" jt="93" />
+			<index name="Pk_org_hier_setup_info" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout3151811" name="amts" show_relation_columns="y" >
+		<entity schema="amts" name="country" color="b2cdf7" x="90" y="195" />
+		<entity schema="amts" name="enterprise_setup" color="b2cdf7" x="75" y="315" />
+		<entity schema="amts" name="org_hier_setup_info" color="b2cdf7" x="570" y="120" />
+		<entity schema="amts" name="eco_zone_setup" color="b2cdf7" x="45" y="90" />
+		<entity schema="amts" name="enterprise_master" color="b2cdf7" x="285" y="150" />
+		<entity schema="amts" name="mapp_eco_zone_setup" color="b2cdf7" x="225" y="45" />
+		<entity schema="amts" name="legal_entity_master" color="b2cdf7" x="435" y="135" />
+		<entity schema="amts" name="bondType" color="b2cdf7" x="870" y="165" />
+	</layout>
+</project>
