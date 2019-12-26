@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
   				 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com</groupId>
-  <artifactId>AMTS</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>AMTS Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  
-  <properties>
-  		<failOnMissingWebXml>false</failOnMissingWebXml>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com</groupId>
+	<artifactId>AMTS</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>AMTS Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-assembly-plugin.version>2.5.5</maven-assembly-plugin.version>
 		<maven-compiler.version>2.5.1</maven-compiler.version>
@@ -18,8 +18,8 @@
 		<maven-surefire.version>2.18.1</maven-surefire.version>
 		<encoding>UTF-8</encoding>
 	</properties>
-  
-  
+
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -54,19 +54,11 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
-		<!-- <dependency> 
-				<groupId>com.microsoft.sqlserver</groupId> 
-				<artifactId>sqljdbc4</artifactId> 
-				<version>3.0</version>
-			 </dependency> -->
+		<!-- <dependency> <groupId>com.microsoft.sqlserver</groupId> <artifactId>sqljdbc4</artifactId> 
+			<version>3.0</version> </dependency> -->
 		<!-- End 25/06/14 -->
-		<!-- MySQL database driver
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.9</version>
-		</dependency>
-		 -->
+		<!-- MySQL database driver <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			<version>5.1.9</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -80,89 +72,96 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
+			<version>1.2.17</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
-			<version>1.2.2</version>
+			<version>1.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-jdk14</artifactId>
-			<version>1.5.10</version>
+			<version>2.0.0-alpha1</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.jtds</groupId>
 			<artifactId>jtds</artifactId>
-			<version>1.2</version>
+			<version>1.3.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
 		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.8.0.GA</version>
+		    <groupId>org.javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.26.0-GA</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
-			<version>2.2</version>
+			<version>3.3.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>3.0-alpha-1</version>
+		    <scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.1.2</version>
+			<version>1.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/taglibs/standard 
 		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-			<version>1.1.2</version>
-		</dependency>
+		    <groupId>taglibs</groupId>
+		    <artifactId>standard</artifactId>
+		    <version>1.1.2</version>
+		</dependency>-->
 
 		<dependency>
 			<groupId>commons-digester</groupId>
 			<artifactId>commons-digester</artifactId>
-			<version>2.0</version>
+			<version>2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
-			<version>1.8.0</version>
+			<version>1.9.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
-			<version>2.1.4</version>
+			<version>3.0.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-jsp</artifactId>
-			<version>2.1.4</version>
+			<version>3.0.8</version>
 		</dependency>
 
-		<!-- Jackson JSON Mapper -->
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.7.1</version>
+			<version>1.9.13</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
-			<version>1.7.1</version>
+			<version>1.9.13</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-jaxrs</artifactId>
-			<version>1.9.2</version>
+			<version>1.9.13</version>
 		</dependency>
-	<dependency>
+		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2</version>
@@ -178,20 +177,20 @@
 			<artifactId>jackson-core</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-		<dependency> 
+		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-	<!-- 	<dependency>
+		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.1.1</version>
-		</dependency>  -->
+		</dependency>
 	</dependencies>
-  <build>
-    <finalName>AMTS</finalName>
-     <filters>
+	<build>
+		<finalName>AMTS</finalName>
+		<filters>
 			<filter>src/main/resources/jdbc.properties</filter>
 		</filters>
 		<resources>
@@ -200,7 +199,7 @@
 				<filtering>true</filtering>
 			</resource>
 		</resources>
-			<pluginManagement>
+		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -240,7 +239,7 @@
 						<target>1.7</target>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -257,7 +256,7 @@
 					by the child modules. If a child module requires one of these plugins the 
 					child only needs to reference the plugin by its groupId and artifactId, the 
 					version will be inherited. The child can override the version if needed. -->
-				<plugin> 
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>${maven-resources.version}</version>
@@ -277,8 +276,8 @@
 
 			</plugins>
 		</pluginManagement>
-  </build>
-<repositories>
+	</build>
+	<repositories>
 		<repository>
 			<id>java.net2</id>
 			<name>Repository hosting the jee6 artifacts</name>
